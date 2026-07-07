@@ -7,8 +7,8 @@ st.title("Painel de Auditorias de Veículos 🚗")
 uploaded_file = st.file_uploader("Carregue o relatório (Excel)", type=["xlsx"])
 
 if uploaded_file:
-    df = pd.read_excel("Relatorio_Empresas_Abril_2026.xlsx")
-
+    # Lê diretamente o arquivo carregado
+    df = pd.read_excel(uploaded_file)
 
     st.subheader("📊 Dados brutos")
     st.dataframe(df)
